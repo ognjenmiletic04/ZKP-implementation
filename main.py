@@ -38,7 +38,6 @@ def print_commitment_preview(commitments: list[list[str]]) -> None:
 
 def run_protocol(rounds: int = 10, use_invalid_solution: bool = False) -> None:
     print("=== Sudoku Zero-Knowledge Proof demo ===")
-    print("Edukativna simulacija: SHA-256 commitment + salt + interaktivne runde")
     print()
 
     solution = tamper_grid(VALID_SUDOKU) if use_invalid_solution else VALID_SUDOKU
@@ -60,7 +59,7 @@ def run_protocol(rounds: int = 10, use_invalid_solution: bool = False) -> None:
 
         print(f"Runda {round_number}:")
         print(f"  Verifikator bira: {challenge.display_name()}")
-        print(f"  Dokazivac otvara samo taj deo: {values}")
+        print(f"  Dokazivac otvara samo ovaj deo: {values}")
         print(f"  Provera: {message}")
         print(f"  Rezultat: {'PRIHVACENO' if is_valid else 'ODBIJENO'}")
         print()
@@ -75,7 +74,6 @@ def run_protocol(rounds: int = 10, use_invalid_solution: bool = False) -> None:
     print("=== Zakljucak ===")
     print(f"Proslo je {accepted_rounds}/{rounds} rundi.")
     print("Verifikator je stekao poverenje da dokazivac poseduje validno resenje,")
-    print("ali nije video celu Sudoku tablu, vec samo nasumicno trazene redove/kolone.")
 
 
 def ask_int(prompt: str, default: int) -> int:
