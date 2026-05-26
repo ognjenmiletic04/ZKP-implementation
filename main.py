@@ -69,6 +69,7 @@ def run_protocol(rounds: int = 10, use_invalid_solution: bool = False) -> None:
             accepted_rounds += 1
         else:
             print("Zakljucak: protokol se zaustavlja jer je verifikator otkrio nevalidan dokaz.")
+            print("Verovatnoca pogotka P(A)= ",1/(2**accepted_rounds))
             return
 
     print("=== Zakljucak ===")
